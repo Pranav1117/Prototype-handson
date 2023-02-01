@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JS Handson Prototype</h1>
+<hr size="5px" color="brown">
+
+      <ol>
+        <li><h2>Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype
+</li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          const Parent ={
+            detail(){
+                console.log('My name is ${this.name} and i am from ${this.location} and age is ${this.age}1')
+            }
+        }
+        
+        const firstChild = Object.create(Parent);
+        firstChild.name ="EA19"
+        firstChild.location ="PrepBytes"
+        firstChild.age =20;
+        firstChild.detail();
+</pre>
+   <hr />  
+   
+
+
+   <li><h2>Write code to explain prototype chaining
+
+
+</li></h2>
+        <h4>Answer:</h4>
+        <pre>
+          let animal = {
+            type: 'animal',
+            makeSound: function() {
+              console.log("Some generic animal sound");
+            }
+          };
+          
+          let dog = {
+            type: 'dog',
+            makeSound: function() {
+              console.log("Woof!");
+            }
+          };
+
+          Object.setPrototypeOf(dog, animal);
+
+          let test = Object.create(dog);
+console.log(test.type); // Output: dog
+test.makeSound();
+</pre>
+   <hr /> 
+
+
+
+   
+
+
+
+   <li><h2>
+    Write a JavaScript function to retrieve all the names of object's own and inherited properties.
+</li></h2>
+
+        <h4>Answer:</h4>
+        <pre>
+          function displayData(Passyear,age,college){
+            this.Passyear=Passyear,
+            this.age=age,
+            this.college=college
+        }
+        displayData.prototype.name=2023;
+        const data=new displayData('EA19',19,'prepbytes');
+        console.log(data.name)
+</pre>
+   <hr /> 
+
+
+
+   
+    
+      </ol>
+    
+    
+  </body>
+</html>
